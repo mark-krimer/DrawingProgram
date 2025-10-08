@@ -1,0 +1,193 @@
+/* General reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background: #f5f5f5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* Main container */
+#container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	width: 90%;
+	max-width: 800px;
+}
+
+/* Controls section */
+#controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #ffffff;
+	padding: 0.75rem 1rem;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+}
+
+#selection {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+#colourSelect {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	cursor: pointer;
+	padding: 0;
+	overflow: hidden;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#colourSelect::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border-radius: 50%;
+}
+#colourSelect::-webkit-color-swatch {
+	border: none;
+	border-radius: 50%;
+}
+
+#colourSelect::-moz-color-swatch {
+	border: none;
+	border-radius: 50%;
+}
+#rangeContainer {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#sizeSelect {
+	appearance: none;
+	width: 150px;
+	height: 6px;
+	border-radius: 5px;
+	background: #ddd;
+	outline: none;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+#sizeSelect:hover {
+	background: #ccc;
+}
+
+#sizeSelect::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #666;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#sizeSelect::-webkit-slider-thumb:hover {
+	background: #444;
+	transform: scale(1.1);
+}
+
+#sizeSelect::-moz-range-thumb {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #666;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#sizeSelect::-moz-range-thumb:hover {
+	background: #444;
+	transform: scale(1.1);
+}
+
+#sizeDisplay {
+	width: 50px;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background: #f9f9f9;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+	font-size: 0.9rem;
+}
+
+/* Buttons */
+#buttonContainer {
+	display: flex;
+	gap: 0.5rem; /* space between delete & save */
+}
+
+button {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: #eee;
+	background-size: 60% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: background-color 0.2s ease;
+}
+
+button:hover {
+	background-color: #ddd;
+}
+
+#deleteButton {
+	background-image: url("./assets/Trash Black.png");
+}
+
+#saveButton {
+	background-image: url("./assets/Save.png");
+}
+
+/* Canvas */
+#canvas {
+	background: #fff;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	width: 100%;
+	height: 500px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Exported canvas preview */
+#exportedCanvasContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+#exportedCanvas {
+	max-width: 100%;
+	border: 2px dashed #aaa;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+#exportedCanvasContainer p {
+	font-size: 0.9rem;
+	color: #555;
+}
