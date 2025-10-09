@@ -84,7 +84,7 @@ function dataURLtoBlob(dataurl) {
 
 function deleteCanvas(canvas) {
 	if (confirm("Are you sure you would like to delete canvas? This action can not be undone.")) {
-		canvasCTX.clearRect(0, 0, canvasCTX.width, canvasCTX.height);
+		canvasCTX.clearRect(0, 0, canvasId.width, canvasId.height);
 	}
 }
 
