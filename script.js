@@ -20,9 +20,14 @@ let lastY = 0;
 // Initiating functions
 function draw(e) {
 	if (isDrawing == true) {
-		// Determining location of mouse pointer
-		lastX = e.pageX - drawingArea.left;
-		lastY = e.pageY - drawingArea.top;
+		// Determining location of mouse/touch
+		if (e.touches) {
+			lastX = e.touches[0].pageX - drawingArea.left;
+			lastY = e.touches[0].pageY - drawingArea.top;
+		} else {
+			lastX = e.pageX - drawingArea.left;
+			lastY = e.pageY - drawingArea.top;
+		}
 
 		// Drawing line to to new coordinates
 		canvasCTX.lineTo(lastX, lastY);
@@ -95,10 +100,16 @@ window.onload = function () {
 	canvasCTX.strokeStyle = `${colourSelect.value}`;
 
 	// Connecting drawing related events
+	// Mouse events
 	canvasId.addEventListener("mousemove", draw);
 	canvasId.addEventListener("mousedown", startDrawing);
 	canvasId.addEventListener("mouseup", stopDrawing);
 	canvasId.addEventListener("mouseout", stopDrawing);
+	//Touchscreen events
+	canvasId.addEventListener("touchmove", draw);
+	canvasId.addEventListener("touchstart", startDrawing);
+	canvasId.addEventListener("touchend", stopDrawing);
+	canvasId.addEventListener("touchcancel", stopDrawing);
 };
 
 colourSelect.addEventListener("change", function () {
