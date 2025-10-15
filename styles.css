@@ -12,6 +12,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	overflow: hidden; /* prevent scrolling */
+	touch-action: none; /* disable pinch/zoom */
 }
 
 /* Desktop layout (your original CSS) */
@@ -152,7 +154,7 @@ button {
 }
 
 button:hover {
-	background-color: #ddd;
+	background-color: #bbb;
 }
 
 #deleteButton {
@@ -161,6 +163,18 @@ button:hover {
 
 #saveButton {
 	background-image: url("./assets/Save.png");
+}
+
+#eraseTool {
+	background-image: url("./assets/Eraser.png");
+}
+
+#eyedropTool {
+	background-image: url("./assets/Eyedropper.png");
+}
+
+.selected {
+	background-color: #bbb;
 }
 
 /* Canvas */
@@ -193,16 +207,12 @@ button:hover {
 	color: #555;
 }
 
-/* =========================
-   Mobile-only tweaks
-   ========================= */
+/* Mobile */
 @media (max-width: 600px) {
 	html,
 	body {
 		width: 100%;
 		height: 100%;
-		overflow: hidden; /* prevent scrolling */
-		touch-action: none; /* disable pinch/zoom */
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		user-select: none;

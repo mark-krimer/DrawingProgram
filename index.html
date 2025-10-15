@@ -10,17 +10,19 @@
 		<div id="container">
 			<div id="controls">
 				<div id="selection">
-					<input type="color" name="colourSelect" id="colourSelect" />
+					<input type="color" name="colourSelect" id="colourSelect" value="#323364" />
 
 					<div id="rangeContainer">
-						<input type="range" name="sizeSelect" id="sizeSelect" min="1" max="20" value="7" />
-						<input type="number" name="sizeDisplay" id="sizeDisplay" min="1" max="20" />
+						<input type="range" name="sizeSelect" id="sizeSelect" min="1" max="30" value="10" />
+						<input type="number" name="sizeDisplay" id="sizeDisplay" min="1" max="30" />
 					</div>
 				</div>
 
 				<div id="buttonContainer">
-					<button id="deleteButton" onclick="deleteCanvas(this)"></button>
 					<button id="saveButton" onclick="saveCanvas(this)"></button>
+					<button id="eraseTool" onclick="toggleEraseTool(this)"></button>
+					<button id="eyedropTool" onclick="eyedropTool(this)"></button>
+					<button id="deleteButton" onclick="deleteCanvas(this)"></button>
 				</div>
 			</div>
 
